@@ -4,9 +4,8 @@ Currently, this project is just a way for me to explore my hobby. I'm trying to 
 
 ## Project Structure
 
-- **src/**: Berisi file kode sumber utama.
-- **include/**: Berisi header file untuk proyek.
-- **tests/**: Berisi file untuk testing proyek.
+- **lib/**: Berisi header file untuk proyek.
+- **/main.c**: Place your main function here
 - **.gitignore**: File yang menentukan file mana yang diabaikan oleh Git.
 - **README.md**: Dokumentasi proyek.
 - **Makefile**: Berisi instruksi untuk kompilasi proyek.
@@ -17,3 +16,7 @@ Currently, this project is just a way for me to explore my hobby. I'm trying to 
 2. Install the C/C++ extension on VSCode
 3. clone this project
 4. just import lib/cesocket.h and use on your main file project
+
+## Compile code
+1. code your main function on main.c file
+2. compile with command "gcc main.c -lws2_32 -o program_name.exe" (windows)
