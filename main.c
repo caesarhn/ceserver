@@ -1,16 +1,19 @@
 #include "lib/cesocket.h"
-#include "lib/neural_network.h"
+#include <stdio.h>
+//#include "lib/neural_network.h"
 
-typedef void (*KernelFunc)();
+//typedef void (*KernelFunc)();
+
+extern int runKernel();
 
 void testRoute(){
     char data[1000] = "{\"data\": [{\"nama\": \"Caesar\", \"membership\": \"Premium\"}, {\"nama\": \"Alvonso\", \"membership\": \"Silver\"}]}";
     responseJsonFunc(data);
-    printf("kenapa\n");
+    //printf("kenapa\n");
 }
 
-void main (){
-    runKernel();
+int main (){
+    printf("%zu \n", runKernel());
     // // Load the DLL
     // HINSTANCE hDll = LoadLibrary("cuda_kernel.dll");
     // if (!hDll) {
@@ -39,4 +42,6 @@ void main (){
         startListen();
         //stopListen();
     }
+
+    return 0;
 }

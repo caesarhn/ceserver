@@ -17,6 +17,21 @@ Currently, this project is just a way for me to explore my hobby. I'm trying to 
 3. clone this project
 4. just import lib/cesocket.h and use on your main file project
 
+# Development
+Nvidia Toolkit (cudart.lib)
+WS2 (-lws2_32)
+
 ## Compile code
+
 1. code your main function on main.c file
 2. compile with command "gcc main.c -lws2_32 -o program_name.exe" (windows)
+
+## Compile With Cuda
+
+1. (compile cu program) "nvcc -c [cuda_code_name.cu] -o [cuda_lib_name.obj] -Xcompiler '/GS-'"
+2. (compile c program) "gcc -c main.c -o main.o"
+3. (compile both) "gcc main.o [cuda_lib_name.obj] -L. -lcudart -lws2_32 -lmsvcrt -o [program_name.exe]"
+
+-Xcompiler '/GS-' = deactivate buffer overflow protection
+-lws2_32 = windows websocket lib
+-lcudart = cuda lib

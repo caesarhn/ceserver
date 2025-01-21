@@ -8,7 +8,7 @@ __global__ void neuralNetwork(int *a, int *b, int *c, int n){
     }
 }
 
-extern "C" void runKernel(){
+extern "C" int runKernel(){
     int n = 512;
     int size = n * sizeof(int);
 
@@ -40,10 +40,12 @@ extern "C" void runKernel(){
     cudaMemcpy(c, d_c, size, cudaMemcpyDeviceToHost);
 
     // Tampilkan hasil
-    printf("Hasil penjumlahan:\n");
+    //printf("Hasil penjumlahan:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d + %d = %d\n", a[i], b[i], c[i]);
+        //printf("%d + %d = %d\n", a[i], b[i], c[i]);
     }
+
+    return c[100];
 
     // Bebaskan memori
     free(a);
