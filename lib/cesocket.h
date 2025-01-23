@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <unistd.h>
+#include "type.h"
 //#include "json.h"
 
 // Buffer 
